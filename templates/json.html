@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table border="1" cellspacing="0">
+{% for page in data %}
+      <tr>
+        <td rowspan="{{ page.count + 1 }}">
+          <image width="800" src="/image/{{ name }}_{{ page.page }}.jpg"></image>
+        </td>
+        <td colspan="2">Page {{ page.page + 1 }}</td>
+      </tr>
+{% for line in page.line %}
+      <tr>
+        <td>
+          {{ line }}
+        </td>
+        <td class="notranslate">
+          {{ line }}
+        </td>
+      </tr>
+{% endfor %}
+{% endfor %}
+    </table>
+  </body>
+</html>
